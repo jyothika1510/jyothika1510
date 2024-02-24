@@ -1,0 +1,167 @@
+import React, { useState } from 'react';
+
+const SignIn = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSignIn = async () => {
+    try {
+      
+      setEmail('');
+      setPassword('');
+      setErrorMessage('');
+    } catch (error) {
+      setErrorMessage('Error signing in. Please try again.');
+    }
+  };
+
+  return (
+    <div>
+      <h2>Sign In</h2>
+      {errorMessage && <p>{errorMessage}</p>}
+      <label>Email:</label>
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <label>Password:</label>
+      <input
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button onClick={handleSignIn}>Sign In</button>
+    </div>
+  );
+};
+export default SignIn;
+
+import React, { useState } from 'react';
+
+const Login = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleLogin = async () => {
+    try {
+
+      setUsername('');
+      setPassword('');
+      setErrorMessage('');
+    } catch (error) {
+      setErrorMessage('Error logging in. Please try again.');
+    }
+  };
+
+  return (
+    <div>
+      <h2>Login</h2>
+      {errorMessage && <p>{errorMessage}</p>}
+      <label>Username:</label>
+      <input
+        type="text"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <label>Password:</label>
+      <input
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button onClick={handleLogin}>Login</button>
+    </div>
+  );
+};
+
+export default Login;
+
+import React, { useState } from 'react';
+
+const ProfileSetup = () => {
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [preferences, setPreferences] = useState('');
+  const [familySize, setFamilySize] = useState('');
+  const [allergies, setAllergies] = useState('');
+  const [notificationPreferences, setNotificationPreferences] = useState('');
+
+  const handleProfileSetup = async () => {
+    try {
+       (
+        username,
+        email,
+        password,
+        preferences,
+        familySize,
+        allergies,
+        notificationPreferences
+      });
+      setUsername('');
+      setEmail('');
+      setPassword('');
+      setPreferences('');
+      setFamilySize('');
+      setAllergies('');
+      setNotificationPreferences('');
+    } catch (error) {
+      console.error('Error setting up profile:', error);
+      
+    }
+  };
+
+  return (
+    <div>
+      <h2>Profile Setup</h2>
+      <label>Username:</label>
+      <input
+        type="text"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <label>Email:</label>
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <label>Password:</label>
+      <input
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <label>Preferences:</label>
+      <input
+        type="text"
+        value={preferences}
+        onChange={(e) => setPreferences(e.target.value)}
+      />
+      <label>Family Size:</label>
+      <input
+        type="text"
+        value={familySize}
+        onChange={(e) => setFamilySize(e.target.value)}
+      />
+      <label>Allergies:</label>
+      <input
+        type="text"
+        value={allergies}
+        onChange={(e) => setAllergies(e.target.value)}
+      />
+      <label>Notification Preferences:</label>
+      <input
+        type="text"
+        value={notificationPreferences}
+        onChange={(e) => setNotificationPreferences(e.target.value)}
+      />
+      <button onClick={handleProfileSetup}>Setup Profile</button>
+    </div>
+  );
+};
+
+export default ProfileSetup;
